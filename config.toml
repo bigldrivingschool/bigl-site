@@ -1,0 +1,62 @@
+baseURL = "http://example.org/"
+title = "My New Hugo Site"
+theme = "hugo-universal-theme"
+languageCode = "en-nz"
+defaultContentLanguage = "en"
+
+[menu]
+
+# Main menu
+
+[[menu.main]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Services"
+    identifier = "services"
+    url  = "/services/"
+    weight = 2
+
+[[menu.main]]
+    name = "Instructors"
+    identifier = "instructors"
+    url  = "/instructors/"
+    weight = 3
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact/"
+    weight = 4
+
+# Top bar social links menu
+
+[[menu.topbar]]
+    weight = 2
+    name = "Facebook"
+    url = "http://facebook.com/bigldrivingschool"
+    pre = "<i class='fa fa-2x fa-facebook'></i>"
+
+[[menu.topbar]]
+    weight = 4
+    name = "Email"
+    url = "mailto:bookings@bigl.co.nz"
+    pre = "<i class='fa fa-2x fa-envelope'></i>"
+
+[params]
+    style = "red"
+    latitude = "-36.602527"
+    longitude = "174.6724383"
+    direction = "Big L Driving School, Auckland"
+
+# Enable or disable top bar with social icons
+[params.topbar]
+    enable = true
+    text = """
+        <p class="hidden-sm hidden-xs">For boookings, contact us on 021 1066 077 or bookings@bigl.co.nz</p>
+        <p class="hidden-md hidden-lg">
+            <a href="tel:0211066077" data-animate-hover="pulse"><i class="fa fa-phone"></i>021 1066 077</a>
+         </p>
+      """
+
