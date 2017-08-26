@@ -1,5 +1,5 @@
-baseURL = "http://example.org/"
-title = "My New Hugo Site"
+baseURL = "http://bigl.co.nz/"
+title = "Big L Driving School | Driving Lessons North Shore, Auckland"
 theme = "hugo-universal-theme"
 languageCode = "en-nz"
 defaultContentLanguage = "en"
