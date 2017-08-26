@@ -1,4 +1,4 @@
-baseURL = "http://bigl.co.nz/"
+baseURL = "https://bigl.co.nz/"
 defaultContentLanguage = "en"
 googleAnalytics = "UA-42097851-4"
 languageCode = "en-nz"
