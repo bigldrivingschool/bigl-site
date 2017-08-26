@@ -1,4 +1,4 @@
-baseURL = "https://bigldrivingschool.github.io/bigl-site"
+baseURL = "https://bigldrivingschool.github.io/bigl-site/"
 title = "Big L Driving School | Driving Lessons North Shore, Auckland"
 theme = "hugo-universal-theme"
 languageCode = "en-nz"
