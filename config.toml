@@ -1,4 +1,4 @@
-baseURL = "https://bigldrivingschool.github.io/bigl-site/"
+baseURL = "http://bigl.co.nz/"
 defaultContentLanguage = "en"
 languageCode = "en-nz"
 theme = "hugo-universal-theme"
