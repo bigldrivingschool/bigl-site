@@ -4,23 +4,23 @@ languageCode = "en-nz"
 theme = "hugo-universal-theme"
 title = "Big L Driving School | Driving Lessons North Shore, Auckland"
 [[menu.main]]
-name = "Contact"
-url = "contact/"
-weight = 4
-[[menu.main]]
-identifier = "instructors"
-name = "Instructors"
-url = "instructors/"
-weight = 3
+name = "Home"
+url = ""
+weight = 1
 [[menu.main]]
 identifier = "services"
 name = "Services"
 url = "services/"
 weight = 2
 [[menu.main]]
-name = "Home"
-url = ""
-weight = 1
+identifier = "instructors"
+name = "Instructors"
+url = "instructors/"
+weight = 3
+[[menu.main]]
+name = "Contact"
+url = "contact/"
+weight = 4
 [[menu.topbar]]
 name = "Email"
 pre = "<i class='fa fa-2x fa-envelope'></i>"
