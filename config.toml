@@ -1,9 +1,9 @@
 baseURL = "http://bigl.co.nz/"
 defaultContentLanguage = "en"
+googleAnalytics = "UA-42097851-4"
 languageCode = "en-nz"
 theme = "hugo-universal-theme"
 title = "Big L Driving School | Driving Lessons North Shore, Auckland"
-googleAnalytics = "UA-42097851-4"
 [[menu.main]]
 name = "Contact"
 url = "/contact/"
