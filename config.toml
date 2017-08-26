@@ -46,9 +46,20 @@ defaultContentLanguage = "en"
 
 [params]
     style = "red"
+     address = """<p><strong>Big L Driving School</strong>
+            <br>Silverdale
+            <br>Auckland
+            <br>
+             <br>
+            <strong>021 1066 077</strong>
+          </p>
+          """
     latitude = "-36.602527"
     longitude = "174.6724383"
     direction = "Big L Driving School, Auckland"
+    logo = "img/logo.png"
+    about_us = "<p>We provide a range of services, from full and restricted driving lessons to mock tests and overseas conversion. The instructor, Pravin Kalyan (PK) is NZTA qualified and holds dual qualification of Driving Instructor and Driver Testing Officer.</p>"
+    copyright = "Copyright (c) 2017, Big L Driving School"
 
 # Enable or disable top bar with social icons
 [params.topbar]
