@@ -1,5 +1,5 @@
 +++
-description = "Services we provide to you"
+description = "Services we provide"
 keywords = ["Services", "Lessons", "mock test", "restricted test", "overseas", "full licence"]
 title = "Services"
 type = "page"
