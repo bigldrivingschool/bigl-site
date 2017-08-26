@@ -6,8 +6,6 @@ title = "Contact"
 type = "page"
 
 +++
-
-
 # We are here to help you
 
 Based in Silverdale, we serve the wider North Shore, Rodney and West Auckland. Call us today and with our help, you are more likely to pass your driving test the first time.
