@@ -70,8 +70,6 @@ cannot incur more than 2 ‘critical errors’ overall, no ‘immediate fail err
 
 * your spouse or partner (for example the person you live with as if you’re married or in a civil union)
 
-*
-
 A useful resource for learner drivers sitting for their Restricted Licences is a website put together by
 NZTA – https://drive.govt.nz. This is aimed specifically at learner drivers and explains the Restricted Licence test process in detail.
 
