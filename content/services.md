@@ -1,10 +1,15 @@
 +++
-title = "Services"
 description = "Services we provide"
-keywords = ["Services","Lessons","mock test","restricted test", "overseas", "full licence"]
+keywords = ["Services", "Lessons", "mock test", "restricted test", "overseas", "full licence"]
+title = "Services"
+type = "page"
+
 +++
 
-> For more information on any of the below or to make a booking, please contact us by calling Pravin (PK) on **021 1066 077** or emailing us at [bookings@bigl.co.nz](mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry)
+
+<blockquote>
+<p>For more information on any of the below or to make a booking, please contact us by calling Pravin (PK) on <strong>021 1066 077</strong> or emailing us at <a href="mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry">bookings@bigl.co.nz</a></p>
+</blockquote>
 
 ## Learner licence
 
@@ -21,7 +26,10 @@ You’ll need to pass a test to prove that you understand the rules for driving 
 the New Zealand road code, or by working your way through [interactive road code](https://drive.govt.nz/get-your-learners/interactive-road-code).
 You can sit official practice learner tests at [Rode Code Practice](http://www.roadcodepractice.co.nz/) and at the [NZTA road codes site](https://www.nzta.govt.nz/resources/roadcode/).
 
+test
+
 ## Restricted licence
+
 We teach you to drive in a very safe and supportive environment under the guidance and expertise of a professional driving
 instructor who has been an Ex-Driver Testing Officer with VTNZ and conducted thousands of driving test whilst in that role.
 Pravin (PK) is a very patient and caring and promotes safe driving skills.
@@ -55,13 +63,14 @@ cannot incur more than 2 ‘critical errors’ overall, no ‘immediate fail err
 **To keep you safe while you’re still on restricted licence, there are some conditions you must follow:**
 
 * you can drive on your own between 5am and 10pm.
+
 * you can only drive between 10pm and 5am if you have a supervisor in the front passenger seat.
+
 * If you’re driving without a supervisor, you can only take a passenger if they are:
+
 * your spouse or partner (for example the person you live with as if you’re married or in a civil union)
-* a child who is financially dependent on you or your spouse (for example you are their parent or guardian)
-your parent or guardian
-relatives that live with you and are on a social security benefit
-someone you look after as their primary caregiver.
+
+*
 
 A useful resource for learner drivers sitting for their Restricted Licences is a website put together by
 NZTA – https://drive.govt.nz. This is aimed specifically at learner drivers and explains the Restricted Licence test process in detail.
@@ -125,5 +134,8 @@ In addition, Pravin (PK) can also act as your support person during your actual 
 
 **The practical driving test for Overseas Conversions is based on the Full Licence Test.**
 
----
-> For more information on mock tests or to make a booking, please contact us by calling Pravin (PK) on **021 1066 077** or emailing us at [bookings@bigl.co.nz](mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry)
+<hr>
+
+<blockquote>
+<p>For more information on mock tests or to make a booking, please contact us by calling Pravin (PK) on <strong>021 1066 077</strong> or emailing us at <a href="mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry">bookings@bigl.co.nz</a></p>
+</blockquote>
