@@ -84,12 +84,12 @@ defaultContentLanguage = "en"
         enable = true
         # All carousel items are defined in their own files. You can find example items
         # at 'exampleSite/data/carousel'.
-        # For more informtion take a look at the README.
+        # For more information take a look at the README.
 
     [params.see_more]
         enable = true
         icon = "fa fa-mobile"
         title = "Ready to book?"
         subtitle = "Call or email us now to get started on your journey to a new driver licence!"
-        link_url = "/contact"
+        link_url = "contact"
         link_text = "Contact us now"
