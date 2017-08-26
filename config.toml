@@ -1,95 +1,61 @@
 baseURL = "https://bigldrivingschool.github.io/bigl-site/"
-title = "Big L Driving School | Driving Lessons North Shore, Auckland"
-theme = "hugo-universal-theme"
-languageCode = "en-nz"
 defaultContentLanguage = "en"
-
-[menu]
-
-# Main menu
-
+languageCode = "en-nz"
+theme = "hugo-universal-theme"
+title = "Big L Driving School | Driving Lessons North Shore, Auckland"
 [[menu.main]]
-    name = "Home"
-    url  = "/"
-    weight = 1
-
+name = "Contact"
+url = "/contact/"
+weight = 4
 [[menu.main]]
-    name = "Services"
-    identifier = "services"
-    url  = "/services/"
-    weight = 2
-
+identifier = "instructors"
+name = "Instructors"
+url = "/instructors/"
+weight = 3
 [[menu.main]]
-    name = "Instructors"
-    identifier = "instructors"
-    url  = "/instructors/"
-    weight = 3
-
+identifier = "services"
+name = "Services"
+url = "/services/"
+weight = 2
 [[menu.main]]
-    name = "Contact"
-    url  = "/contact/"
-    weight = 4
-
-# Top bar social links menu
-
+name = "Home"
+url = "/"
+weight = 1
 [[menu.topbar]]
-    weight = 1
-    name = "Facebook"
-    url = "http://facebook.com/bigldrivingschool"
-    pre = "<i class='fa fa-2x fa-facebook'></i>"
-
+name = "Email"
+pre = "<i class='fa fa-2x fa-envelope'></i>"
+url = "mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry"
+weight = 2
 [[menu.topbar]]
-    weight = 2
-    name = "Email"
-    url = "mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry"
-    pre = "<i class='fa fa-2x fa-envelope'></i>"
-
+name = "Facebook"
+pre = "<i class='fa fa-2x fa-facebook'></i>"
+url = "http://facebook.com/bigldrivingschool"
+weight = 1
 [params]
-    defaultKeywords = ["learn to drive", "driving school north shore", "driving lessons north shore", "cheap driving lessons"]
-    style = "red"
-     address = """<p><strong>Big L Driving School</strong>
-            <br>Silverdale
-            <br>Auckland
-            <br>
-             <br>
-            <strong>021 1066 077</strong>
-          </p>
-          """
-    latitude = "-36.602527"
-    longitude = "174.6724383"
-    direction = "Big L Driving School, Auckland"
-    logo = "img/logo.png"
-    about_us = "<p>We provide a range of services, from full and restricted driving lessons to mock tests and overseas conversion. The instructor, Pravin Kalyan (PK) is NZTA qualified and holds dual qualification of Driving Instructor and Driver Testing Officer.</p>"
-    copyright = "Copyright (c) 2017, Big L Driving School"
-
-    [params.features]
-        enable = true
-
-    [params.testimonials]
-        enable = true
-        title = "Our packages"
-        subtitle = "We offer a variety of services and plans to get you ready for your driving exam. Feel free to call us for any custom requirements"
-
-    # Enable or disable top bar with social icons
-    [params.topbar]
-        enable = true
-        text = """
-            <p class="hidden-sm hidden-xs">For boookings, contact us on 021 1066 077 or bookings@bigl.co.nz</p>
-            <p class="hidden-md hidden-lg">
-                <a href="tel:0211066077" data-animate-hover="pulse"><i class="fa fa-phone"></i>021 1066 077</a>
-             </p>
-          """
-
-    [params.carousel]
-        enable = true
-        # All carousel items are defined in their own files. You can find example items
-        # at 'exampleSite/data/carousel'.
-        # For more information take a look at the README.
-
-    [params.see_more]
-        enable = true
-        icon = "fa fa-mobile"
-        title = "Ready to book?"
-        subtitle = "Call or email us now to get started on your journey to a new driver licence!"
-        link_url = "contact"
-        link_text = "Contact us now"
+about_us = "<p>We provide a range of services, from full and restricted driving lessons to mock tests and overseas conversion. The instructor, Pravin Kalyan (PK) is NZTA qualified and holds dual qualification of Driving Instructor and Driver Testing Officer.</p>"
+address = "<p><strong>Big L Driving School</strong>\n            <br>Silverdale\n            <br>Auckland\n            <br>\n             <br>\n            <strong>021 1066 077</strong>\n          </p>\n          "
+copyright = "Copyright (c) 2017, Big L Driving School"
+defaultkeywords = ["learn to drive", "driving school north shore", "driving lessons north shore", "cheap driving lessons"]
+direction = "Big L Driving School, Auckland"
+latitude = "-36.602527"
+logo = "img/logo.png"
+longitude = "174.6724383"
+style = "red"
+[params.carousel]
+enable = true
+[params.features]
+enable = true
+[params.see_more]
+enable = true
+icon = "fa fa-mobile"
+link_text = "Contact us now"
+link_url = "contact"
+subtitle = "Call or email us now to get started on your journey to a new driver licence!"
+title = "Ready to book?"
+[params.testimonials]
+enable = true
+subtitle = "We offer a variety of services and plans to get you ready for your driving exam. Feel free to call us for any custom requirements"
+title = "Our packages"
+[params.topbar]
+enable = true
+text = "            <p class=\"hidden-sm hidden-xs\">For boookings, contact us on 021 1066 077 or bookings@bigl.co.nz</p>\n            <p class=\"hidden-md hidden-lg\">\n                <a href=\"tel:0211066077\" data-animate-hover=\"pulse\"><i class=\"fa fa-phone\"></i>021 1066 077</a>\n             </p>\n          "
