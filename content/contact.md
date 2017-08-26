@@ -1,10 +1,11 @@
 +++
-title = "Contact"
-id = "contact"
 description = "How to contact us"
-keywords = ["Contact","Where to find us","questions","call us"]
-+++
+id = "contact"
+keywords = ["Contact", "Where to find us", "questions", "call us"]
+title = "Contact"
+type = "page"
 
++++
 # We are here to help you
 
 Based in Silverdale, we serve the wider North Shore, Rodney and West Auckland. Call us today and with our help, you are likelier to pass your driving test the first time.

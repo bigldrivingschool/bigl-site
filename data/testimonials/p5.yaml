@@ -1,8 +1,7 @@
-text: >
-        <h2 class="text-center">$75/hr</h2>
-        <h3 class="text-center">Vehicle hire for licence test</h2>
-        <ul>
-          <li>For $40 more, get a 1 hour pre-test drive if required</li>
-        </ul>
-name: "Hire a vehicle you are comfortable with"
-avatar: ""
+---
+text: |
+  <h2 class="text-center">$75/hr</h2> <h3 class="text-center">Vehicle hire for licence test</h2> <ul>
+    <li>For $40 more, get a 1 hour pre-test drive if required</li>
+  </ul>
+name: Hire a vehicle you are comfortable with
+avatar: ''

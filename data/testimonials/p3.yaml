@@ -1,11 +1,10 @@
-text: >
-        <h2 class="text-center">$550</h2>
-        <h3 class="text-center">10 x 1 hour driving lessons</h2>
-        <ul>
-          <li>A full 1 hour of driving</li>
-          <li>Tailored to the driver's individual needs</li>
-          <li>Includes take-home lesson notes</li>
-          <li>Add $5 per hour using driving school vehicle</li>
-        </ul>
-name: "Our best value package deal!"
-avatar: ""
+---
+text: |
+  <h2 class="text-center">$550</h2> <h3 class="text-center">10 x 1 hour driving lessons</h2> <ul>
+    <li>A full 1 hour of driving</li>
+    <li>Tailored to the driver's individual needs</li>
+    <li>Includes take-home lesson notes</li>
+    <li>Add $5 per hour using driving school vehicle</li>
+  </ul>
+name: Our best value package deal!
+avatar: ''

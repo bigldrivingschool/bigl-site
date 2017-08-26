@@ -1,9 +1,10 @@
 +++
-title = "Instructors"
 description = "Information about instructor"
-keywords = ["NZTA","testing officer","mock test","restricted test", "overseas", "full licence"]
-+++
+keywords = ["NZTA", "testing officer", "mock test", "restricted test", "overseas", "full licence"]
+title = "Instructors"
+type = "page"
 
++++
 ## About Big L Driving School
 
 My name is Pravin Kalyan also known as PK and I am NZTA qualified and hold dual qualification of Driving Instructor and Driver Testing Officer.
