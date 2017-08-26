@@ -61,13 +61,15 @@ defaultContentLanguage = "en"
     about_us = "<p>We provide a range of services, from full and restricted driving lessons to mock tests and overseas conversion. The instructor, Pravin Kalyan (PK) is NZTA qualified and holds dual qualification of Driving Instructor and Driver Testing Officer.</p>"
     copyright = "Copyright (c) 2017, Big L Driving School"
 
-# Enable or disable top bar with social icons
-[params.topbar]
-    enable = true
-    text = """
-        <p class="hidden-sm hidden-xs">For boookings, contact us on 021 1066 077 or bookings@bigl.co.nz</p>
-        <p class="hidden-md hidden-lg">
-            <a href="tel:0211066077" data-animate-hover="pulse"><i class="fa fa-phone"></i>021 1066 077</a>
-         </p>
-      """
+    [params.features]
+        enable = true
 
+    # Enable or disable top bar with social icons
+    [params.topbar]
+        enable = true
+        text = """
+            <p class="hidden-sm hidden-xs">For boookings, contact us on 021 1066 077 or bookings@bigl.co.nz</p>
+            <p class="hidden-md hidden-lg">
+                <a href="tel:0211066077" data-animate-hover="pulse"><i class="fa fa-phone"></i>021 1066 077</a>
+             </p>
+          """
