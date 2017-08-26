@@ -64,6 +64,11 @@ defaultContentLanguage = "en"
     [params.features]
         enable = true
 
+    [params.testimonials]
+        enable = true
+        title = "Our packages"
+        subtitle = "We offer a variety of services and plans to get you ready for your driving exam. Feel free to call us for any custom requirements"
+
     # Enable or disable top bar with social icons
     [params.topbar]
         enable = true
@@ -73,3 +78,9 @@ defaultContentLanguage = "en"
                 <a href="tel:0211066077" data-animate-hover="pulse"><i class="fa fa-phone"></i>021 1066 077</a>
              </p>
           """
+
+    [params.carousel]
+        enable = true
+        # All carousel items are defined in their own files. You can find example items
+        # at 'exampleSite/data/carousel'.
+        # For more informtion take a look at the README.

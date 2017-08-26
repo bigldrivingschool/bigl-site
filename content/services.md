@@ -35,7 +35,7 @@ a combination of driving school lessons and driving with other supervisors in be
 the better you get with your driving ability. Being taught by a professional instructor will greatly enhance your chances
 of passing your Restricted Licence test.
 
-### The restricted licence test
+#### The restricted licence test
 
 The Restricted Test is intended to check that you have sufficient knowledge of the road rules and the necessary driving
 skills required to be a safe and competent driver. It will expose you to a variety of driving situations that you would
@@ -71,7 +71,7 @@ NZTA – https://drive.govt.nz. This is aimed specifically at learner drivers an
 Following successfully attaining the restricted licence, the next step is Full Licence. Whilst you are driving under restricted
 licence , you are actually practising driving for your full licence and that you are still learning.
 
-### The full licence test
+#### The full licence test
 
 To be eligible to sit for your Full Licence, you must have held your Restricted Licence for the required period of time.
 Obtaining your Full Licence will remove the restrictions such as carrying passengers, driving at night or driving a manual vehicle.
