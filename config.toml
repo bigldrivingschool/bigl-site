@@ -56,7 +56,7 @@ subtitle = "Call or email us now to get started on your journey to a new driver 
 title = "Ready to book?"
 [params.testimonials]
 enable = true
-subtitle = "We offer a variety of services and plans to get you ready for your driving exam. Feel free to call us for any custom requirements"
+subtitle = "We offer a variety of services and plans to get you ready for your driving exam. Feel free to call us for any custom requirements."
 title = "Our packages"
 [params.topbar]
 enable = true
