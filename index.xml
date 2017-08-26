@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Big L Driving School | Driving Lessons North Shore, Auckland</title>
+    <link>http://bigl.co.nz/</link>
+    <description>Recent content on Big L Driving School | Driving Lessons North Shore, Auckland</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-nz</language>
+    <copyright>Copyright (c) 2017, Big L Driving School</copyright>
+    
+	<atom:link href="http://bigl.co.nz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Contact</title>
+      <link>http://bigl.co.nz/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://bigl.co.nz/contact/</guid>
+      <description> We are here to help you Based in Silverdale, we serve the wider North Shore, Rodney and West Auckland. Call us today and with our help, you are likelier to pass your driving test the first time.
+Please feel free to contact us via the methods below.
+Phone: 021 106 6077 Email: bookings@bigl.co.nz You can also find us on Facebook. Feel free to leave a review! Big L Driving School </description>
+    </item>
+    
+    <item>
+      <title>Instructors</title>
+      <link>http://bigl.co.nz/instructors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://bigl.co.nz/instructors/</guid>
+      <description>About Big L Driving School My name is Pravin Kalyan also known as PK and I am NZTA qualified and hold dual qualification of Driving Instructor and Driver Testing Officer. In my previous role of Driver Testing Officer, I have carried out thousands of restricted and full driving test and have seen varying driving standards. Each time I witnessed poor performance by the drivers, I wished I could help to improve their driving standards but my role as Driver Testing Officer prevented me from helping apart from debriefing after the driving test with recommendation for improving their driving standards.</description>
+    </item>
+    
+    <item>
+      <title>Services</title>
+      <link>http://bigl.co.nz/services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://bigl.co.nz/services/</guid>
+      <description>For more information on any of the below or to make a booking, please contact us by calling Pravin (PK) on 021 1066 077 or emailing us at bookings@bigl.co.nz
+ Learner licence We can assist you with passing your theory test by directing you to the available resources and/or sitting with you on one on one basis to explain and reason out various scenarios. Outlined below are references to available resources for the learner licence requirements.</description>
+    </item>
+    
+  </channel>
+</rss>

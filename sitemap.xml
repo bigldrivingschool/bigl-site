@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://bigl.co.nz/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bigl.co.nz/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bigl.co.nz/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bigl.co.nz/instructors/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bigl.co.nz/services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://bigl.co.nz/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
