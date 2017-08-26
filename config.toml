@@ -1,7 +1,6 @@
 baseURL = "http://bigl.co.nz/"
 defaultContentLanguage = "en"
 googleAnalytics = "UA-42097851-4"
-googleMapsApiKey = "AIzaSyCNd6uygdT-yheElsGuRdZzAUZ0_Qgh9I4"
 languageCode = "en-nz"
 theme = "hugo-universal-theme"
 title = "Big L Driving School | Driving Lessons North Shore, Auckland"
@@ -34,6 +33,7 @@ pre = "<i class='fa fa-2x fa-envelope'></i>"
 url = "mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry"
 weight = 2
 [params]
+googleMapsApiKey = "AIzaSyCNd6uygdT-yheElsGuRdZzAUZ0_Qgh9I4"
 about_us = "<p>We provide a range of services, from full and restricted driving lessons to mock tests and overseas conversion. The instructor, Pravin Kalyan (PK) is NZTA qualified and holds dual qualification of Driving Instructor and Driver Testing Officer.</p>"
 address = "<p><strong>Big L Driving School</strong>\n            <br>Silverdale\n            <br>Auckland\n            <br>\n             <br>\n            <strong>021 1066 077</strong>\n          </p>\n          "
 copyright = "Copyright (c) 2017, Big L Driving School"
