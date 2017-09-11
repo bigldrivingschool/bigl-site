@@ -5,6 +5,8 @@ title = "Services"
 type = "page"
 
 +++
+
+
 <blockquote>
 <p>For more information on any of the below or to make a booking, please contact us by calling Pravin (PK) on <strong>021 1066 077</strong> or emailing us at <a href="mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry">bookings@bigl.co.nz</a></p>
 </blockquote>
@@ -23,8 +25,6 @@ Learn the road rules To keep everyone safe on the road, you need to learn the ro
 You’ll need to pass a test to prove that you understand the rules for driving safely in New Zealand. You can prepare for this by reading
 the New Zealand road code, or by working your way through [interactive road code](https://drive.govt.nz/get-your-learners/interactive-road-code).
 You can sit official practice learner tests at [Rode Code Practice](http://www.roadcodepractice.co.nz/) and at the [NZTA road codes site](https://www.nzta.govt.nz/resources/roadcode/).
-
-test
 
 ## Restricted licence
 
