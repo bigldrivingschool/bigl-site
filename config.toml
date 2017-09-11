@@ -60,4 +60,4 @@ subtitle = "We offer a variety of services and plans to get you ready for your d
 title = "Our packages"
 [params.topbar]
 enable = true
-text = " <p class=\"hidden-sm hidden-xs\">For boookings, contact us on 021 1066 077 or bookings@bigl.co.nz</p>\n <p class=\"hidden-md hidden-lg\">\n                <a href=\"tel:0211066077\" data-animate-hover=\"pulse\"><i class=\"fa fa-phone\"></i>021 1066 077</a>\n             </p>\n          "
+text = " <p class=\"hidden-sm hidden-xs\">For bookings, contact us on 021 1066 077 or bookings@bigl.co.nz</p>\n <p class=\"hidden-md hidden-lg\">\n                <a href=\"tel:0211066077\" data-animate-hover=\"pulse\"><i class=\"fa fa-phone\"></i>021 1066 077</a>\n             </p>\n          "
