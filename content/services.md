@@ -5,8 +5,6 @@ title = "Services"
 type = "page"
 
 +++
-
-
 <blockquote>
 <p>For more information on any of the below or to make a booking, please contact us by calling Pravin (PK) on <strong>021 1066 077</strong> or emailing us at <a href="mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry">bookings@bigl.co.nz</a></p>
 </blockquote>
