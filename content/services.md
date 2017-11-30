@@ -16,6 +16,8 @@ type = "page"
 * Includes take-home lesson notes
 * Add $5 per hour using driving school vehicle
 
+</br>
+
 #### **$345** - 6 x 1 hour driving lessons
 
 * Tailored to the driver’s individual needs
@@ -23,6 +25,8 @@ type = "page"
 * Add $5 per hour using driving school vehicle
 
 ##### A GREAT PACKAGE DEAL!
+
+</br>
 
 #### **$550**-10 x 1 hour driving lessons
 
@@ -33,6 +37,8 @@ type = "page"
 
 ##### OUR BEST VALUE PACKAGE DEAL!
 
+</br>
+
 #### **$65-**1 hour mock test
 
 * A full 1 hour of driving
@@ -40,6 +46,8 @@ type = "page"
 * Add $5 per hour using driving school vehicle
 
 ##### DRIVE ON REAL TEST ROUTES
+
+</br>
 
 ## Learner licence
 
