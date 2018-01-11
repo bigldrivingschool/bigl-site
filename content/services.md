@@ -5,11 +5,49 @@ title = "Services"
 type = "page"
 
 +++
-
-
 <blockquote>
 <p>For more information on any of the below or to make a booking, please contact us by calling Pravin (PK) on <strong>021 1066 077</strong> or emailing us at <a href="mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry">bookings@bigl.co.nz</a></p>
 </blockquote>
+
+#### **$60 -** 1 hour lesson
+
+* A full 1 hour of driving
+* Tailored to the driver’s individual needs
+* Includes take-home lesson notes
+* Add $5 per hour using driving school vehicle
+
+</br>
+
+#### **$345** - 6 x 1 hour driving lessons
+
+* Tailored to the driver’s individual needs
+* Includes take-home lesson notes
+* Add $5 per hour using driving school vehicle
+
+##### A GREAT PACKAGE DEAL!
+
+</br>
+
+#### **$550**-10 x 1 hour driving lessons
+
+* A full 1 hour of driving
+* Tailored to the driver’s individual needs
+* Includes take-home lesson notes
+* Add $5 per hour using driving school vehicle
+
+##### OUR BEST VALUE PACKAGE DEAL!
+
+</br>
+
+#### **$65-**1 hour mock test
+
+* A full 1 hour of driving
+* Restricted or full licence mock test
+* Add $5 per hour using driving school vehicle
+
+##### DRIVE ON REAL TEST ROUTES
+
+</br>
 
 ## Learner licence
 
@@ -61,11 +99,8 @@ cannot incur more than 2 ‘critical errors’ overall, no ‘immediate fail err
 **To keep you safe while you’re still on restricted licence, there are some conditions you must follow:**
 
 * you can drive on your own between 5am and 10pm.
-
 * you can only drive between 10pm and 5am if you have a supervisor in the front passenger seat.
-
 * If you’re driving without a supervisor, you can only take a passenger if they are:
-
 * your spouse or partner (for example the person you live with as if you’re married or in a civil union)
 
 A useful resource for learner drivers sitting for their Restricted Licences is a website put together by
