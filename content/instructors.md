@@ -1,7 +1,7 @@
 +++
-description = "Information about instructor"
-keywords = ["NZTA", "testing officer", "mock test", "restricted test", "overseas", "full licence"]
-title = "Instructors"
+description = "Our licensed driving instructors are ready to offer you a range of driving lesson options in North Shore Auckland. We help to lift the standard of safe driving skills."
+keywords = ["driving instructor", "driving lesson", "North Shore", "Auckland", "driving skills"]
+title = "Licensed Driving Instructor North Shore Auckland | Big L Driving School"
 type = "page"
 
 +++

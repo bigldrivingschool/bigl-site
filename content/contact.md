@@ -1,8 +1,8 @@
 +++
-description = "How to contact us"
+description = "Contact our licensed driving instructors for a driving lesson in North Shore Auckland today."
 id = "contact"
-keywords = ["Contact", "Where to find us", "questions", "call us"]
-title = "Contact"
+keywords = ["north shore", "hibiscus coast", "driving school", "driving lesson"]
+title = "Contact Us | Driving Lessons and License | Big L Driving School"
 type = "page"
 
 +++

@@ -1,7 +1,7 @@
 +++
-description = "Services we provide to you"
-keywords = ["Services", "Lessons", "mock test", "restricted test", "overseas", "full licence"]
-title = "Services"
+description = "We offer a range of driving lessons including Learner license, Full license and mock driving test etc. Contact for more details."
+keywords = ["driving license", "driving lessons", "mock driving test", "learner license", "full license"]
+title = "Services | Driving Lessons and License | Big L Driving School"
 type = "page"
 
 +++
