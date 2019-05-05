@@ -39,7 +39,7 @@ type = "page"
 
 </br>
 
-#### **$65-**1 hour mock test
+#### **$70-**1 hour mock test
 
 * A full 1 hour of driving
 * Restricted or full licence mock test
