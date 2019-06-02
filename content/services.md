@@ -9,7 +9,7 @@ type = "page"
 <p>For more information on any of the below or to make a booking, please contact us by calling Pravin (PK) on <strong>021 1066 077</strong> or emailing us at <a href="mailto:bookings@bigl.co.nz?Subject=Big%20L%20site%20booking%20enquiry">bookings@bigl.co.nz</a></p>
 </blockquote>
 
-#### **$60 -** 1 hour lesson
+#### **$65 -** 1 hour lesson
 
 * A full 1 hour of driving
 * Tailored to the driver’s individual needs
@@ -18,7 +18,7 @@ type = "page"
 
 </br>
 
-#### **$345** - 6 x 1 hour driving lessons
+#### **$375** - 6 x 1 hour driving lessons
 
 * Tailored to the driver’s individual needs
 * Includes take-home lesson notes
@@ -28,7 +28,7 @@ type = "page"
 
 </br>
 
-#### **$550**-10 x 1 hour driving lessons
+#### **$600**-10 x 1 hour driving lessons
 
 * A full 1 hour of driving
 * Tailored to the driver’s individual needs
