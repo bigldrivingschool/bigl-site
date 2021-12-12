@@ -1,14 +1,15 @@
 +++
-description = "Contact our licensed driving instructors for a driving lesson in North Shore Auckland today."
+description = "Contact our licensed driving instructors for a driving lesson in Hibiscus Coast, Auckland today."
 id = "contact"
-keywords = ["north shore", "hibiscus coast", "driving school", "driving lesson"]
+keywords = ["hibiscus coast", "driving school", "driving lesson"]
 title = "Contact Us | Driving Lessons and License | Big L Driving School"
 type = "page"
 
 +++
+
 # We are here to help you
 
-Based in Silverdale, we serve the wider North Shore, Rodney and West Auckland. Call us today and with our help, you are more likely to pass your driving test the first time.
+Based in Silverdale, we serve the Hibiscus Coast area. Call us today and with our help, you are more likely to pass your driving test the first time.
 
 Please feel free to contact us via the methods below.
 

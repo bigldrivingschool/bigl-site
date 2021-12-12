@@ -1,10 +1,11 @@
 +++
-description = "Our licensed driving instructors are ready to offer you a range of driving lesson options in North Shore Auckland. We help to lift the standard of safe driving skills."
-keywords = ["driving instructor", "driving lesson", "North Shore", "Auckland", "driving skills"]
-title = "Licensed Driving Instructor North Shore Auckland | Big L Driving School"
+description = "Our licensed driving instructors are ready to offer you a range of driving lesson options in Hibiscus Coast Auckland. We help to lift the standard of safe driving skills."
+keywords = ["driving instructor", "driving lesson", "Silverdale", "Hibiscus Coast", "Auckland", "driving skills"]
+title = "Licensed Driving Instructor Hibiscus Coast Auckland | Big L Driving School"
 type = "page"
 
 +++
+
 ## About Big L Driving School
 
 My name is Pravin Kalyan also known as PK and I am NZTA qualified and hold dual qualification of Driving Instructor and Driver Testing Officer.
