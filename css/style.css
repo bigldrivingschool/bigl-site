@@ -106,7 +106,7 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 /* ── Hero ── */
 .hero {
   background:
-    linear-gradient(to right, var(--black) 15%, rgba(10,11,9,.7) 40%, transparent 75%),
+    linear-gradient(to right, rgba(10,11,9,.95) 10%, rgba(10,11,9,.5) 40%, rgba(10,11,9,.15) 70%, transparent 90%),
     var(--black) url('/img/hero-banner.jpg') right center/auto 100% no-repeat;
   color: #fff; padding: 6rem 0;
   position: relative; overflow: hidden;
