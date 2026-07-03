@@ -234,7 +234,21 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 .service-detail { padding: 2.5rem 0; border-bottom: 1px solid var(--gray-200); }
 .service-detail:last-child { border-bottom: none; }
 .service-detail h2 { margin-bottom: .75rem; font-size: 1.4rem; }
-.service-detail p { color: var(--gray-500); line-height: 1.7; }
+.service-detail h3 { font-size: 1.1rem; margin: 1.5rem 0 .5rem; }
+.service-detail p { color: var(--gray-500); line-height: 1.7; margin-bottom: 1rem; }
+.service-detail ul { margin: .5rem 0 1.5rem 1.5rem; color: var(--gray-500); line-height: 1.8; }
+
+/* ── Blockquote ── */
+blockquote {
+  background: var(--red-light); border-left: 4px solid var(--red);
+  padding: 1rem 1.5rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--gray-700); font-size: .95rem; line-height: 1.6; margin-bottom: 2rem;
+}
+blockquote p { margin: 0; }
+
+/* ── Inline pricing list ── */
+.pricing-list { margin: .5rem 0 1.5rem 1.5rem; color: var(--gray-500); line-height: 1.8; }
+.pricing-tag { color: var(--red); font-weight: 700; font-size: .9rem; margin-bottom: 1.5rem; }
 
 /* ── Instructor ── */
 .instructor { display: grid; grid-template-columns: 260px 1fr; gap: 3rem; align-items: start; }
@@ -277,6 +291,8 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 
 /* ── Utilities ── */
 .text-center { text-align: center; }
+.mb-3 { margin-bottom: 3rem; }
+hr { margin: 2rem 0; border: none; border-top: 1px solid var(--gray-200); }
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
