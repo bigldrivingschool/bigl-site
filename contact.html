@@ -21,7 +21,35 @@
   <meta name="ICBM" content="-36.602527, 174.674627">
 </head>
 <body>
-  <div id="site-header"></div>
+  <header class="site-header">
+  <div class="top-bar">
+    <div class="container">
+      <a href="tel:0211066077" class="top-bar__phone">021 1066 077</a>
+      <a href="mailto:bookings@bigl.co.nz" class="top-bar__email">bookings@bigl.co.nz</a>
+      <a href="http://facebook.com/bigldrivingschool" target="_blank" rel="noopener" class="top-bar__social" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <div class="container">
+      <a href="/" class="nav-bar__logo" aria-label="Big L Driving School - Home">
+        <img src="/img/logo.svg" alt="Big L Driving School" width="188" height="47">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Home</a>
+        <a href="/services.html" class="nav__link">Services</a>
+        <a href="/instructors.html" class="nav__link">Instructors</a>
+        <a href="/contact.html" class="nav__link">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
   <main>
     <section class="page-header">
@@ -99,7 +127,35 @@
     </section>
   </main>
 
-  <div id="site-footer"></div>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h3>About us</h3>
+        <p>We provide a range of services, from full and restricted driving lessons to mock tests and overseas conversion. The instructor, Pravin Kalyan (PK) is NZTA qualified and holds dual qualification of Driving Instructor and Driver Testing Officer.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick links</h3>
+        <ul>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/instructors.html">Instructors</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="http://facebook.com/bigldrivingschool" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p><strong>Big L Driving School</strong></p>
+        <p>Silverdale, Auckland</p>
+        <p><strong>021 1066 077</strong></p>
+        <p><a href="mailto:bookings@bigl.co.nz">bookings@bigl.co.nz</a></p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>&copy; 2026 Big L Driving School</p>
+    </div>
+  </div>
+</footer>
 
   <script src="/js/main.js"></script>
 </body>
