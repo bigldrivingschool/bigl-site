@@ -14,8 +14,36 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.bigl.co.nz/">
   <meta property="og:image" content="https://www.bigl.co.nz/img/logo.png">
+  <meta name="robots" content="index, follow">
   <meta name="geo.region" content="NZ-AUK">
   <meta name="geo.placename" content="Silverdale">
+  <meta name="geo.position" content="-36.602527;174.674627">
+  <meta name="ICBM" content="-36.602527, 174.674627">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Big L Driving School",
+    "description": "Driving lessons in Silverdale, Orewa and Hibiscus Coast, Auckland. NZTA qualified instructors for learner, restricted, and full licence tests.",
+    "telephone": "+64211066077",
+    "email": "bookings@bigl.co.nz",
+    "url": "https://www.bigl.co.nz",
+    "sameAs": ["http://facebook.com/bigldrivingschool"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Silverdale",
+      "addressRegion": "Auckland",
+      "addressCountry": "NZ"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-36.602527",
+      "longitude": "174.674627"
+    },
+    "areaServed": ["Silverdale", "Orewa", "Red Beach", "Stanmore Bay", "Whangaparāoa", "Hibiscus Coast"],
+    "priceRange": "$$"
+  }
+  </script>
 </head>
 <body>
   <div id="site-header"></div>
@@ -89,51 +117,7 @@
     <!-- Pricing -->
     <section class="section section--gray" id="pricing">
       <div class="container">
-        <div class="section__heading">
-          <h2>Our packages</h2>
-          <p>Flexible options to suit your needs. All lessons include take-home notes. Add $5/hr to use our school vehicle.</p>
-        </div>
-        <div class="price-grid">
-          <div class="price-card price-card--popular">
-            <div class="price-card__amount">$80</div>
-            <div class="price-card__label">1 hour lesson</div>
-            <ul>
-              <li>A full 1 hour of driving</li>
-              <li>Tailored to your individual needs</li>
-              <li>Includes take-home lesson notes</li>
-            </ul>
-            <p class="price-card__footer">Our most popular option</p>
-          </div>
-          <div class="price-card">
-            <div class="price-card__amount">$460</div>
-            <div class="price-card__label">6 × 1 hour lessons</div>
-            <ul>
-              <li>Tailored to your individual needs</li>
-              <li>Includes take-home lesson notes</li>
-              <li>Save $20 vs individual lessons</li>
-            </ul>
-            <p class="price-card__footer">A great package deal</p>
-          </div>
-          <div class="price-card">
-            <div class="price-card__amount">$750</div>
-            <div class="price-card__label">10 × 1 hour lessons</div>
-            <ul>
-              <li>A full 1 hour of driving each</li>
-              <li>Tailored to your individual needs</li>
-              <li>Save $50 vs individual lessons</li>
-            </ul>
-            <p class="price-card__footer">Best value package</p>
-          </div>
-          <div class="price-card">
-            <div class="price-card__amount">$85</div>
-            <div class="price-card__label">1 hour mock test</div>
-            <ul>
-              <li>A full 1 hour of driving</li>
-              <li>Restricted or full licence mock test</li>
-            </ul>
-            <p class="price-card__footer">Drive on real test routes</p>
-          </div>
-        </div>
+        <div id="site-pricing"></div>
       </div>
     </section>
 
