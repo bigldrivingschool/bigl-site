@@ -105,26 +105,26 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 
 /* ── Hero ── */
 .hero {
-  background: var(--black);
+  background: var(--black) url('/img/hero-banner.jpg') center/cover no-repeat;
   color: #fff; padding: 6rem 0;
   position: relative; overflow: hidden;
 }
-/* L-plate graphic */
-.hero::after {
-  content: 'L';
-  position: absolute; right: -30px; top: 50%; transform: translateY(-55%);
-  font-size: 28rem; font-weight: 900;
-  color: rgba(200,51,44,.06);
-  line-height: 1; pointer-events: none;
-  font-family: 'Arial Black', 'Helvetica Neue', sans-serif;
-}
-/* diagonal accent */
+/* dark overlay for text readability */
 .hero::before {
   content: '';
   position: absolute; inset: 0;
   background:
-    linear-gradient(135deg, rgba(200,51,44,.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(200,51,44,.08) 0%, transparent 50%);
+    linear-gradient(135deg, rgba(10,11,9,.85) 0%, rgba(10,11,9,.4) 60%, rgba(10,11,9,.6) 100%);
+  z-index: 0;
+}
+/* L-plate watermark */
+.hero::after {
+  content: 'L';
+  position: absolute; right: -30px; top: 50%; transform: translateY(-55%);
+  font-size: 28rem; font-weight: 900;
+  color: rgba(200,51,44,.08);
+  line-height: 1; pointer-events: none; z-index: 0;
+  font-family: 'Arial Black', 'Helvetica Neue', sans-serif;
 }
 .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
 .hero__content { max-width: 560px; }
