@@ -230,7 +230,31 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 .page-header h1 { color: #fff; }
 .page-header p { color: var(--gray-300); font-size: 1.1rem; margin-top: .5rem; }
 
-/* ── Service Detail ── */
+/* ── Jump Nav ── */
+.jump-nav { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
+.jump-nav__item {
+  display: inline-block; padding: .45rem 1.1rem; font-size: .875rem; font-weight: 600;
+  color: var(--gray-700); background: #fff; border: 1px solid var(--gray-200);
+  border-radius: 2rem; transition: all .15s; text-decoration: none;
+}
+.jump-nav__item:hover { color: var(--red); border-color: var(--red); background: var(--red-light); text-decoration: none; }
+
+/* ── Service Title ── */
+.service-title {
+  display: flex; align-items: center; gap: .75rem;
+  margin-bottom: 1.5rem; font-size: 1.5rem;
+}
+.service-title__num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; background: var(--red); color: #fff;
+  border-radius: 50%; font-size: 1rem; font-weight: 800; flex-shrink: 0;
+}
+.service-body { max-width: 780px; }
+.service-body h3 { font-size: 1.1rem; margin: 1.5rem 0 .5rem; }
+.service-body p { color: var(--gray-500); line-height: 1.7; margin-bottom: 1rem; }
+.service-body ul { margin: .5rem 0 1.5rem 1.5rem; color: var(--gray-500); line-height: 1.8; }
+
+/* ── Service Detail (legacy, keep for now) ── */
 .service-detail { padding: 2.5rem 0; border-bottom: 1px solid var(--gray-200); }
 .service-detail:last-child { border-bottom: none; }
 .service-detail h2 { margin-bottom: .75rem; font-size: 1.4rem; }
