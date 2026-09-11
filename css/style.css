@@ -208,6 +208,83 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 .price-card li::before { content: '✓'; color: var(--red); font-weight: 700; margin-right: .5rem; }
 .price-card__footer { font-size: .8rem; color: var(--gray-400); margin-top: .5rem; font-style: italic; }
 
+/* ── Rating Summary ── */
+.rating-summary {
+  display: flex; align-items: center; justify-content: center; gap: .6rem;
+  flex-wrap: wrap; margin-bottom: 2.5rem;
+}
+.rating-summary__stars { color: #fbbc04; font-size: 1.4rem; letter-spacing: .12em; line-height: 1; }
+.rating-summary__score { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--black); }
+.rating-summary__count { color: var(--gray-500); font-size: .95rem; }
+
+/* ── Testimonials ── */
+.testimonial-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.testimonial {
+  background: #fff; border: 1px solid var(--gray-200);
+  border-radius: var(--radius); padding: 2rem;
+  display: flex; flex-direction: column; position: relative;
+  transition: box-shadow .25s, transform .25s;
+}
+.testimonial:hover { box-shadow: 0 12px 40px rgba(0,0,0,.07); transform: translateY(-2px); }
+.testimonial__quote {
+  position: absolute; top: 1.25rem; right: 1.5rem;
+  font-family: Georgia, serif; font-size: 4rem; line-height: 1;
+  color: var(--red-light); pointer-events: none;
+}
+.testimonial__stars { color: #fbbc04; font-size: 1rem; letter-spacing: .15em; margin-bottom: 1rem; }
+.testimonial__text { color: var(--gray-700); font-size: .95rem; line-height: 1.75; margin-bottom: 1.5rem; flex: 1; }
+.testimonial__author { display: flex; align-items: center; gap: .75rem; }
+.testimonial__avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--red-light); color: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1rem; flex-shrink: 0;
+}
+.testimonial__name { font-weight: 600; color: var(--black); line-height: 1.3; }
+.testimonial__meta { font-size: .8rem; color: var(--gray-500); }
+.testimonials__source {
+  text-align: center; margin-top: 2rem; font-size: .9rem; color: var(--gray-500);
+}
+.testimonials__source a { font-weight: 600; }
+
+/* Hero rating badge */
+.hero__rating {
+  display: inline-flex; align-items: center; gap: .5rem;
+  margin-bottom: 1.5rem; font-size: .9rem; color: rgba(255,255,255,.9);
+}
+.hero__rating .stars { color: #fbbc04; letter-spacing: .1em; }
+
+/* ── Gallery ── */
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+.gallery-item {
+  position: relative; aspect-ratio: 4 / 3; margin: 0;
+  border-radius: var(--radius); overflow: hidden;
+  display: flex; align-items: flex-end;
+  background: linear-gradient(135deg, #1c1c1c 0%, var(--black) 100%);
+  color: #fff;
+}
+.gallery-item img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; transition: transform .45s ease;
+}
+.gallery-item:hover img { transform: scale(1.06); }
+.gallery-item__icon {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: rgba(200,51,44,.5);
+}
+.gallery-item__icon svg { width: 52px; height: 52px; }
+.gallery-item__caption {
+  position: relative; z-index: 1; width: 100%;
+  padding: 1.75rem 1rem .9rem;
+  background: linear-gradient(transparent, rgba(10,11,9,.92));
+  font-size: .85rem; font-weight: 600; letter-spacing: .01em;
+}
+
 /* ── CTA ── */
 .cta {
   background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
@@ -334,11 +411,13 @@ hr { margin: 2rem 0; border: none; border-top: 1px solid var(--gray-200); }
   .instructor__image { max-width: 200px; margin: 0 auto; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
   .price-grid { grid-template-columns: 1fr; }
   .hero { padding: 2.5rem 0; }
+  .gallery-grid { grid-template-columns: 1fr; }
 }
 
 @media (min-width: 769px) {
