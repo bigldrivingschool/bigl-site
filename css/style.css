@@ -31,7 +31,7 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--red); text-decoration: none; transition: color .15s; }
-a:hover { color: var(--red-dark); }
+a:hover { color: var(--red-dark); text-decoration: underline; text-underline-offset: 3px; }
 ul { list-style: none; }
 h1, h2, h3, h4 { font-family: 'Sora', 'Inter', -apple-system, sans-serif; line-height: 1.25; color: var(--black); letter-spacing: -.02em; }
 h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); font-weight: 700; }
@@ -336,7 +336,12 @@ blockquote p { margin: 0; }
 }
 .contact-item__icon svg { width: 20px; height: 20px; }
 .contact-item strong { display: block; margin-bottom: .15rem; }
-.contact-item p, .contact-item a { color: var(--gray-500); display: block; }
+.contact-item p { color: var(--gray-500); display: block; }
+.contact-item a {
+  color: var(--red); font-weight: 500; display: inline-block;
+  text-underline-offset: 3px; transition: color .15s;
+}
+.contact-item a:hover { color: var(--red-dark); text-decoration: underline; }
 
 /* ── Footer ── */
 .site-footer { background: var(--black); color: #fff; padding: 4rem 0 2rem; }
