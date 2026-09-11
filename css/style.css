@@ -105,16 +105,11 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 
 /* ── Hero ── */
 .hero {
-  background: var(--black) url('/img/hero-banner.jpg') right center/auto 100% no-repeat;
+  background:
+    linear-gradient(90deg, rgba(10,11,9,.96) 0%, rgba(10,11,9,.82) 22%, rgba(10,11,9,.55) 48%, rgba(10,11,9,.28) 72%, rgba(10,11,9,.12) 100%),
+    var(--black) url('/img/hero-banner.jpg') center/cover no-repeat;
   color: #fff; padding: 6rem 0;
   position: relative; overflow: hidden;
-}
-/* dark overlay for text readability */
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(10,11,9,.92) 0%, rgba(10,11,9,.7) 30%, rgba(10,11,9,.1) 55%, rgba(10,11,9,.05) 70%);
-  z-index: 0;
 }
 /* L-plate watermark */
 .hero::after {
