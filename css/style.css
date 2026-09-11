@@ -38,6 +38,25 @@ h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); font-weight: 700; }
 h2 { font-size: clamp(1.6rem, 3.5vw, 2.15rem); font-weight: 700; }
 h3 { font-size: 1.15rem; font-weight: 600; }
 
+/* ── Focus visibility (accessibility) ── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+/* High-contrast focus on dark backgrounds */
+.top-bar :focus-visible,
+.hero :focus-visible,
+.cta :focus-visible,
+.site-footer :focus-visible,
+.page-header :focus-visible {
+  outline-color: #fff;
+}
+
 /* ── Container ── */
 .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
 
