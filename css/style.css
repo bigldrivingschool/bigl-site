@@ -208,12 +208,16 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 .price-card li::before { content: '✓'; color: var(--red); font-weight: 700; margin-right: .5rem; }
 .price-card__footer { font-size: .8rem; color: var(--gray-400); margin-top: .5rem; font-style: italic; }
 
+/* ── Star ratings (SVG) ── */
+.stars { display: inline-flex; align-items: center; gap: .06em; color: #fbbc04; line-height: 1; }
+.star { width: 1em; height: 1em; fill: currentColor; flex-shrink: 0; }
+
 /* ── Rating Summary ── */
 .rating-summary {
   display: flex; align-items: center; justify-content: center; gap: .6rem;
   flex-wrap: wrap; margin-bottom: 2.5rem;
 }
-.rating-summary__stars { color: #fbbc04; font-size: 1.4rem; letter-spacing: .12em; line-height: 1; }
+.rating-summary .stars { font-size: 1.5rem; }
 .rating-summary__score { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--black); }
 .rating-summary__count { color: var(--gray-500); font-size: .95rem; }
 
@@ -234,7 +238,7 @@ h3 { font-size: 1.15rem; font-weight: 600; }
   font-family: Georgia, serif; font-size: 4rem; line-height: 1;
   color: var(--red-light); pointer-events: none;
 }
-.testimonial__stars { color: #fbbc04; font-size: 1rem; letter-spacing: .15em; margin-bottom: 1rem; }
+.testimonial__stars { font-size: 1.05rem; margin-bottom: 1rem; }
 .testimonial__text { color: var(--gray-700); font-size: .95rem; line-height: 1.75; margin-bottom: 1.5rem; flex: 1; }
 .testimonial__author { display: flex; align-items: center; gap: .75rem; }
 .testimonial__avatar {
@@ -255,7 +259,7 @@ h3 { font-size: 1.15rem; font-weight: 600; }
   display: inline-flex; align-items: center; gap: .5rem;
   margin-bottom: 1.5rem; font-size: .9rem; color: rgba(255,255,255,.9);
 }
-.hero__rating .stars { color: #fbbc04; letter-spacing: .1em; }
+.hero__rating .stars { font-size: .9rem; }
 
 
 /* ── CTA ── */
