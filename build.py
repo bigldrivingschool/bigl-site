@@ -1,38 +1,55 @@
 #!/usr/bin/env python3
-"""Build: inline shared partials into static HTML pages.
+"""Build: inline shared partials into static HTML pages (idempotent).
 
-Usage: python3 build.py
-  Reads _header.html, _footer.html, _pricing.html
-  Inlines them into each page, writes final output.
-  Run before committing to gh-pages.
+Each page marks shared regions with comment markers:
+  <!--@header-->  ...  <!--/@header-->
+  <!--@footer-->  ...  <!--/@footer-->
+  <!--@pricing--> ...  <!--/@pricing-->
+
+build.py replaces the content between each marker pair with the
+current partial, so re-running it always refreshes from the partials.
+
+Usage: python3 build.py   (run before committing / previewing)
 """
 import os, re
 
 SITE = os.path.dirname(os.path.abspath(__file__))
 PAGES = ['index.html', 'services.html', 'instructors.html', 'contact.html', '404.html']
 
-partials = {}
-for name in ['_header.html', '_footer.html', '_pricing.html']:
-    with open(os.path.join(SITE, name)) as f:
-        partials[name] = f.read().strip()
-
-id_map = {
-    'site-header': '_header.html',
-    'site-footer': '_footer.html',
-    'site-pricing': '_pricing.html',
+PARTIALS = {
+    'header': '_header.html',
+    'footer': '_footer.html',
+    'pricing': '_pricing.html',
 }
 
+def load(name):
+    with open(os.path.join(SITE, name)) as f:
+        return f.read().strip()
+
+partials = {k: load(v) for k, v in PARTIALS.items()}
+
+# Regex to match a marker block: <!--@name--> ... <!--/@name--> (content optional)
+pattern = re.compile(
+    r'<!--@(?P<name>[a-z]+)-->\n(.*?)\n?<!--/@(?P=name)-->',
+    re.DOTALL,
+)
+
+changed = 0
 for page in PAGES:
     path = os.path.join(SITE, page)
     with open(path) as f:
         html = f.read()
 
-    for el_id, partial_name in id_map.items():
-        tag = f'<div id="{el_id}"></div>'
-        if tag in html:
-            html = html.replace(tag, partials[partial_name])
+    def repl(m):
+        name = m.group('name')
+        if name in partials:
+            return '<!--@%s-->\n%s\n<!--/@%s-->' % (name, partials[name], name)
+        return m.group(0)
 
-    with open(path, 'w') as f:
-        f.write(html)
+    new_html = pattern.sub(repl, html)
+    if new_html != html:
+        changed += 1
+        with open(path, 'w') as f:
+            f.write(new_html)
 
-print(f'Built {len(PAGES)} pages with {len(partials)} partials')
+print(f'Rebuilt {changed} page(s) (of {len(PAGES)} total)')

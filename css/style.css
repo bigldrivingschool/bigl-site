@@ -105,9 +105,7 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 
 /* ── Hero ── */
 .hero {
-  background:
-    linear-gradient(to right, rgba(10,11,9,.95) 10%, rgba(10,11,9,.5) 40%, rgba(10,11,9,.15) 70%, transparent 90%),
-    var(--black) url('/img/hero-banner.jpg') right center/auto 100% no-repeat;
+  background: var(--black) url('/img/hero-banner.jpg') right center/auto 100% no-repeat;
   color: #fff; padding: 6rem 0;
   position: relative; overflow: hidden;
 }
@@ -115,8 +113,7 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 .hero::before {
   content: '';
   position: absolute; inset: 0;
-  background:
-    linear-gradient(135deg, rgba(10,11,9,.85) 0%, rgba(10,11,9,.4) 60%, rgba(10,11,9,.6) 100%);
+  background: linear-gradient(to right, rgba(10,11,9,.92) 0%, rgba(10,11,9,.7) 30%, rgba(10,11,9,.1) 55%, rgba(10,11,9,.05) 70%);
   z-index: 0;
 }
 /* L-plate watermark */
