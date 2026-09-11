@@ -14,7 +14,7 @@ Usage: python3 build.py   (run before committing / previewing)
 import os, re
 
 SITE = os.path.dirname(os.path.abspath(__file__))
-PAGES = ['index.html', 'services.html', 'instructors.html', 'contact.html', '404.html']
+PAGES = ['index.html', 'services/index.html', 'instructors/index.html', 'contact/index.html', '404.html']
 
 PARTIALS = {
     'header': '_header.html',
