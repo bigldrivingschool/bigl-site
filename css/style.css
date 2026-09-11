@@ -238,7 +238,6 @@ h3 { font-size: 1.15rem; font-weight: 600; }
   font-family: Georgia, serif; font-size: 4rem; line-height: 1;
   color: var(--red-light); pointer-events: none;
 }
-.testimonial__stars { font-size: 1.05rem; margin-bottom: 1rem; }
 .testimonial__text { color: var(--gray-700); font-size: .95rem; line-height: 1.75; margin-bottom: 1.5rem; flex: 1; }
 .testimonial__author { display: flex; align-items: center; gap: .75rem; }
 .testimonial__avatar {
