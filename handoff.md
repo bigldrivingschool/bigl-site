@@ -44,6 +44,9 @@ _pricing.html     ← shared pricing block (home + services)   │  not the page
 _callbar.html     ← sticky mobile "Call now" bar (every page)┘
 build.py          ← inlines the partials into the 5 pages
 
+_og-card.html     ← source for the 1200×630 social share card (dev file,
+                    excluded from the published site — see §8)
+
 index.html              ← home
 services/index.html     ← services + pricing
 instructors/index.html  ← PK's bio
@@ -52,7 +55,8 @@ contact/index.html      ← contact methods
 
 css/style.css     ← the ONLY stylesheet (~423 lines, hand-written)
 js/main.js        ← mobile nav toggle + active-link highlight (~36 lines)
-img/              ← hero-banner.jpg, logo.svg, logo.png, favicon*, apple-touch-icon
+img/              ← hero-banner.jpg, logo.svg, logo.png, og-cover.png,
+                    favicon*, apple-touch-icon, placeholder.png
 ```
 
 ### The partial system (⚠ read this)
@@ -154,8 +158,14 @@ white on dark (`.top-bar`, `.hero`, `.cta`, `.site-footer`, `.page-header`).
   `@id`, `hasMap`, `sameAs` Facebook).
 - Canonical + Open Graph + meta description on every page; `404.html` is
   `noindex`.
-- ⚠ `og:image` currently points at `img/logo.png` (small — weak on social share).
-  A proper 1200×630 card would be better (see §10).
+- **Social share card**: `og:image` is `img/og-cover.png` — a 1200×630 branded
+  card (logo, "Driving Lessons", service area, 5.0 rating, phone + email on a
+  black strip). `og:image:width/height/alt` and `twitter:card`
+  (`summary_large_image`) + `twitter:title/description/image` are set on the
+  four indexable pages; `404.html` gets the image tags only.
+  The card is **generated**, not hand-drawn: edit `_og-card.html`, serve the
+  repo on :8080, and screenshot `http://localhost:8080/_og-card.html` at
+  1200×630 with device scale factor 1 into `img/og-cover.png`.
 
 ## 9. Known state / not-yet-done
 
@@ -165,7 +175,7 @@ white on dark (`.top-bar`, `.hero`, `.cta`, `.site-footer`, `.page-header`).
 | Instructor photo | `instructors/` uses `img/placeholder.png` — needs a real photo of PK. |
 | FAQ section | **Built.** 8-question `<details>` accordion at `#faq` on the homepage + `FAQPage` JSON-LD in the page `<head>` (visible copy and schema text match exactly). |
 | Sticky mobile "Call now" bar | **Built.** `_callbar.html` → `.call-bar`, fixed bottom bar, `tel:0211066077`, shown only ≤768px. |
-| Social share card (`og:image`) | Still `logo.png`; want a 1200×630 branded card. |
+| Social share card (`og:image`) | **Built.** `img/og-cover.png` (1200×630) + `twitter:card`. Source: `_og-card.html`. |
 | Google Analytics | Old `UA-42097851-4` is **dead**. Needs a GA4 tag (owner must create it). |
 | `prefers-reduced-motion` | Not handled (no scroll animations exist yet, so low priority). |
 | Gallery section | Removed (was placeholder tiles, no real photos). |
@@ -175,11 +185,10 @@ white on dark (`.top-bar`, `.hero`, `.cta`, `.site-footer`, `.page-header`).
 1. **Deploy** once the owner signs off (see §5).
 2. **Real instructor photo** → replace `img/placeholder.png` on `/instructors/`
    (single biggest trust upgrade).
-3. **Social share card** → 1200×630 image + update `og:image`/`twitter:image`.
-4. **Google Analytics** → GA4 tag once the owner creates the property.
+3. **Google Analytics** → GA4 tag once the owner creates the property.
 
-Done (delete from this list when the next items land): sticky mobile call bar
-and the homepage FAQ + `FAQPage` JSON-LD.
+Done (delete from this list when the next items land): sticky mobile call bar,
+the homepage FAQ + `FAQPage` JSON-LD, and the 1200×630 social share card.
 
 ## 11. Rules of engagement (learned the hard way)
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+  Social share card source (1200x630). Dev file — excluded from the published
+  site via deploy.yml exclude_assets, same as the other _* partials.
+
+  Re-render after editing:
+    python3 -m http.server 8080          # from the repo root
+    # then screenshot http://localhost:8080/_og-card.html at 1200x630,
+    # device scale factor 1, into img/og-cover.png
+-->
+<html lang="en-nz">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #fff; color: #0a0b09;
+  }
+  .card {
+    position: relative; width: 1200px; height: 630px; overflow: hidden;
+    padding: 58px 72px 148px; display: flex; align-items: flex-start; gap: 36px;
+    background:
+      radial-gradient(760px 520px at 104% 2%, #fef2f2 0%, rgba(254,242,242,0) 66%),
+      #fff;
+  }
+  .col { position: relative; z-index: 1; flex: 1; }
+  .logo { width: 376px; height: 94px; }
+  .eyebrow {
+    display: inline-block; margin: 46px 0 18px;
+    font-size: 24px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: #C8332C;
+  }
+  h1 {
+    font-family: 'Sora', 'Inter', sans-serif; font-weight: 800; font-size: 96px;
+    line-height: 1.0; letter-spacing: -.03em; color: #0a0b09;
+  }
+  .where {
+    margin-top: 24px; font-size: 32px; font-weight: 600; color: #374151; letter-spacing: -.01em;
+  }
+  .rating {
+    display: flex; align-items: center; gap: 14px; margin-top: 26px;
+    font-size: 26px; font-weight: 600; color: #374151;
+  }
+  .stars { display: inline-flex; gap: 3px; color: #fbbc04; }
+  .stars svg { width: 29px; height: 29px; fill: currentColor; }
+
+  /* L-plate badge */
+  .lplate {
+    position: relative; z-index: 1; flex-shrink: 0;
+    width: 244px; height: 244px; margin-top: 62px; border-radius: 18px;
+    background: linear-gradient(135deg, #C8332C 0%, #a82a24 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 24px 60px rgba(200, 51, 44, .32);
+  }
+  .lplate span {
+    font-family: 'Arial Black', 'Helvetica Neue', sans-serif; font-weight: 900;
+    font-size: 150px; color: #fff; line-height: 1;
+  }
+  .lplate::after {
+    content: ''; position: absolute; inset: 10px;
+    border: 6px solid rgba(255, 255, 255, .28); border-radius: 11px;
+  }
+
+  /* Contact strip */
+  .strip {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 108px; z-index: 2;
+    background: #0a0b09; color: #fff;
+    display: flex; align-items: center; gap: 46px; padding: 0 72px;
+    font-size: 32px; font-weight: 700; letter-spacing: -.01em;
+  }
+  .strip b { color: #fff; }
+  .strip .item { display: flex; align-items: center; gap: 16px; }
+  .strip svg { width: 32px; height: 32px; flex-shrink: 0; }
+  .strip .url { margin-left: auto; color: #9ca3af; font-weight: 600; font-size: 28px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="col">
+      <img class="logo" src="/img/logo.svg" alt="Big L Driving School">
+      <span class="eyebrow">Learner &middot; Restricted &middot; Full licence</span>
+      <h1>Driving Lessons</h1>
+      <div class="where">Silverdale &middot; Orewa &middot; Hibiscus Coast</div>
+      <div class="rating">
+        <span class="stars">
+          <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
+        </span>
+        <span>5.0 &middot; 150+ Google reviews</span>
+      </div>
+    </div>
+    <div class="lplate"><span>L</span></div>
+
+    <div class="strip">
+      <span class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <b>021 1066 077</b>
+      </span>
+      <span class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <b>bookings@bigl.co.nz</b>
+      </span>
+      <span class="url">www.bigl.co.nz</span>
+    </div>
+  </div>
+</body>
+</html>
