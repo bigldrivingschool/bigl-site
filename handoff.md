@@ -109,6 +109,60 @@ Before going live, verify:
 2. `.nojekyll` exists (present ✓ — stops GitHub Pages running Jekyll)
 3. GitHub Pages is configured to serve from the `gh-pages` branch (repo Settings).
 
+### 5.1 Release plan — first deploy (`rebuild-2026` → live)
+
+Verified state as of 2026-10-02: repo `bigldrivingschool/bigl-site` is **public**,
+**default branch is `master`**, Pages is enabled, and the live site still serves
+the old Hugo/Bootstrap build. `bigl.co.nz` 301-redirects to `www.bigl.co.nz`, so
+**no DNS work is needed**. Rollback point for the current live site: **`2a7c0a8`**
+(last commit on `origin/gh-pages`).
+
+**⚠ Blocker:** `.github/workflows/deploy.yml` exists only on `rebuild-2026`.
+GitHub only exposes `workflow_dispatch` workflows that exist on the *default*
+branch ("This event will only trigger a workflow run if the workflow file exists
+on the default branch"). Confirmed against the API — `actions/workflows` returns
+only `pages-build-deployment` for this repo. So there is currently **no "Run
+workflow" button**.
+
+Steps, in order:
+
+1. **Push `rebuild-2026`** so origin matches what was reviewed.
+2. **Make the workflow dispatchable** — add `.github/workflows/deploy.yml` to
+   `master` (one small commit; the run itself uses the files from the branch you
+   select), *or* switch the repo default branch to `rebuild-2026` in Settings.
+   Either way add a guard step so a run from any other ref fails fast instead of
+   publishing `content/`, `themes/`, `config.toml` from `master` to the live site.
+3. **Archive the live site before it is wiped** — `force_orphan: true` replaces
+   `gh-pages` with a fresh root commit, so `2a7c0a8` becomes unreachable on
+   GitHub. Push it to a throwaway ref first:
+   `git push origin 2a7c0a8:refs/heads/gh-pages-archive`.
+4. **Confirm Settings → Pages** = "Deploy from a branch → `gh-pages` → / (root)"
+   and that "Enforce HTTPS" is on.
+5. **Run** Actions → "Deploy to GitHub Pages" → Run workflow → branch
+   `rebuild-2026`. Live in ~1–2 min.
+
+Verify after the run (GitHub Pages caches ~10 min, so hard-refresh):
+
+- `/`, `/services/`, `/instructors/`, `/contact/` → 200
+- live HTML contains `call-bar`, `faq__item`, `og-cover.png`
+- `/img/og-cover.png` → 200 and 1200×630
+- dev files → 404: `/build.py`, `/_header.html`, `/_callbar.html`,
+  `/_og-card.html`, `/handoff.md`
+- `/does-not-exist/` → 404 status and the styled 404 page
+- old Bootstrap assets gone (e.g. `/css/bootstrap.min.css` → 404)
+
+**Rollback:** `git push origin gh-pages-archive:gh-pages --force` restores the old
+site in about a minute.
+
+Known and accepted at launch (deliberately not fixed first): `img/placeholder.png`
+on `/instructors/`, condensed home service-card copy, placement/wording of the
+privacy clause, the nav that does not actually stick, the 670×446 hero image, and
+no GA4 tag. Also expected: the old Hugo `/categories/`, `/tags/` and `/index.xml`
+URLs will 404 (they were unlinked taxonomy pages).
+
+Post-launch: submit `sitemap.xml` and request indexing for the four pages in
+Search Console, add GA4 when the property exists, then work the deferred list.
+
 ## 6. Business facts (use verbatim — these are corrected)
 
 | Thing | Value |
