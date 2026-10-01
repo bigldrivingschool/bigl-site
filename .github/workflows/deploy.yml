@@ -21,3 +21,5 @@ jobs:
           publish_dir: .
           publish_branch: gh-pages
           force_orphan: true
+          # Keep dev-only files off the public site
+          exclude_assets: 'handoff.md,build.py,_header.html,_footer.html,_pricing.html'

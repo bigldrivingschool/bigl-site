@@ -1,0 +1,210 @@
+# HANDOFF — Big L Driving School website rebuild
+
+**Last updated:** 2026-10-01 (AEST)
+**Branch:** `rebuild-2026` (all work lives here; pushed to `origin`)
+**Live site:** https://www.bigl.co.nz — **still serves the OLD site** (deploy not yet run)
+**Repo:** `git@github.com:bigldrivingschool/bigl-site.git`
+
+This file is the single source of truth for picking this project back up. Read it
+top to bottom before touching anything.
+
+---
+
+## 1. What this project is
+
+`bigl.co.nz` — brochure site for **Big L Driving School** (Silverdale, Auckland,
+NZ). Four pages + 404. Was originally a 2017 **Hugo** build (v0.25.1) with
+**Bootstrap 3.3.7 + jQuery 3.1.1 + Font Awesome 4.7.0**, deployed to `gh-pages`.
+
+It has been **rebuilt from scratch as plain static HTML/CSS** — no framework, no
+JavaScript bundler, no dependencies. The old Hugo/Bootstrap output is abandoned.
+
+## 2. Branch map (IMPORTANT)
+
+| Branch | What it is |
+|---|---|
+| `rebuild-2026` | **Active work.** The new clean site. Everything here. |
+| `gh-pages` | **Currently live.** Old Hugo/Bootstrap output. Do not edit by hand. |
+| `master` | 2017 Hugo **source** (`content/`, `themes/`, etc.). Reference only. |
+
+**Recovering old content:** the last good old-site commit is `2a7c0a8`
+(`Update mock test price`). Use `git show 2a7c0a8:<path>` to read original
+files, e.g. `git show 2a7c0a8:services/index.html`. All original copy has
+already been migrated — this is only for re-checking parity.
+
+## 3. Architecture
+
+Plain static HTML/CSS. No build step is *required* to serve it — the only
+"build" is inlining shared partials into the pages.
+
+```
+_header.html      ← shared header (inlined into every page)  ┐
+_footer.html      ← shared footer (inlined into every page)  ├─ EDIT THESE,
+_pricing.html     ← shared pricing block (home + services)   ┘  not the pages
+build.py          ← inlines the partials into the 5 pages
+
+index.html              ← home
+services/index.html     ← services + pricing
+instructors/index.html  ← PK's bio
+contact/index.html      ← contact methods
+404.html                ← styled 404 (noindex)
+
+css/style.css     ← the ONLY stylesheet (~423 lines, hand-written)
+js/main.js        ← mobile nav toggle + active-link highlight (~36 lines)
+img/              ← hero-banner.jpg, logo.svg, logo.png, favicon*, apple-touch-icon
+```
+
+### The partial system (⚠ read this)
+
+Pages contain **marker comments** around shared regions:
+
+```html
+<!--@header-->
+   ...content here gets replaced on every build...
+<!--/@header-->
+```
+
+`python3 build.py` replaces everything between each marker pair with the current
+partial. **It is idempotent** — safe to run repeatedly.
+
+**THE RULE:** never hand-edit the header/footer/pricing inside a page. Edit the
+partial (`_header.html`, `_footer.html`, `_pricing.html`) and run `build.py`.
+Hand-editing a page's header region just gets overwritten on the next build.
+
+## 4. Run it locally
+
+```bash
+cd ~/Dev/bigl-site
+python3 build.py                 # refresh partials (do this first)
+python3 -m http.server 8080
+# open http://localhost:8080/
+```
+
+Pages: `/`, `/services/`, `/instructors/`, `/contact/` — all must return 200.
+
+## 5. Deploy (GitHub Pages)
+
+Workflow: `.github/workflows/deploy.yml`
+
+- Trigger: **`workflow_dispatch` only** (manual). Nothing auto-deploys. This is
+  deliberate — the live site was left untouched while the rebuild was reviewed.
+- Action: `peaceiris/actions-gh-pages@v4`, `publish_dir: .`,
+  `publish_branch: gh-pages`, **`force_orphan: true`** (wipes old Bootstrap files
+  from `gh-pages` and replaces them wholesale).
+- Runs `python3 build.py` first, then publishes.
+
+**To go live:** Actions tab → "Deploy to GitHub Pages" → Run workflow, *or*
+`gh workflow run deploy.yml`. Live in ~1–2 min.
+
+Before going live, verify:
+1. `CNAME` = `www.bigl.co.nz` (present ✓)
+2. `.nojekyll` exists (present ✓ — stops GitHub Pages running Jekyll)
+3. GitHub Pages is configured to serve from the `gh-pages` branch (repo Settings).
+
+## 6. Business facts (use verbatim — these are corrected)
+
+| Thing | Value |
+|---|---|
+| Instructor | Pravin Kalyan ("PK") — NZTA qualified, ex-VTNZ Driver Testing Officer, 37 yrs driving |
+| Phone | **021 1066 077** (`tel:0211066077`) |
+| Email | **bookings@bigl.co.nz** |
+| Facebook | `https://www.facebook.com/BigLDrivingSchool` (capital L) |
+| Google Place ID | `ChIJBZDNiJMjDW0R3TMZ0WI-Ld4` |
+| Address | 40 Butler Stoney Crescent, Millwater, Silverdale 0932 |
+| Service area | Millwater, Silverdale, Orewa, Rodney, Hibiscus Coast |
+| Rating | 5.0 · **150+** Google reviews (never show an exact count — it goes stale) |
+| Pricing | $80/1hr · $460/6×(1hr) · $750/10×(1hr) · $85/1hr mock test; "+$5/hr to use school vehicle" |
+
+⚠ A **Google Maps API key** was embedded in the original source. It was removed.
+**Do not reintroduce any hardcoded API key.**
+
+## 7. Design system
+
+**Colours** (CSS custom props in `:root` of `css/style.css`):
+```
+--red: #C8332C   --red-dark: #a82a24   --red-light: #fef2f2
+--black: #0a0b09   --white: #fff   --gray-50/100/200/300/400/500/700
+```
+
+**Typography:** `Sora` (headings, 600/700/800) + `Inter` (body, 400–700), loaded
+from Google Fonts in each page `<head>` (not the partial).
+
+**Stars:** ratings use an **inline SVG sprite** (`<symbol id="icon-star">` in
+`_header.html`) referenced via `<use href="#icon-star"/>`. This replaces Unicode
+`★` so stars render identically on every OS. Gold fill via `currentColor`
+(`#fbbc04`). Used on the home hero badge + review-bar only (removed from
+testimonial cards on purpose).
+
+**Accessibility:** `:focus-visible` outlines — 3px red on light backgrounds,
+white on dark (`.top-bar`, `.hero`, `.cta`, `.site-footer`, `.page-header`).
+
+## 8. SEO setup (already done — keep it intact)
+
+- **Directory URLs** (`/services/`, `/instructors/`, `/contact/`) — matches the
+  old site, so no URL changes / no re-ranking risk. `404.html` is the only
+  `.html` URL that stays (GitHub Pages convention).
+- `sitemap.xml` — 4 URLs, `www` canonical.
+- `robots.txt` — `Allow: /` + sitemap pointer.
+- `CNAME` → `www.bigl.co.nz`.
+- **JSON-LD `LocalBusiness`** on the homepage (includes `aggregateRating`,
+  `@id`, `hasMap`, `sameAs` Facebook).
+- Canonical + Open Graph + meta description on every page; `404.html` is
+  `noindex`.
+- ⚠ `og:image` currently points at `img/logo.png` (small — weak on social share).
+  A proper 1200×630 card would be better (see §10).
+
+## 9. Known state / not-yet-done
+
+| Item | Status |
+|---|---|
+| Deploy to production | **Not run.** Live site is still old. |
+| Instructor photo | `instructors/` uses `img/placeholder.png` — needs a real photo of PK. |
+| FAQ section | Not built (good SEO + conversion win). |
+| Sticky mobile "Call now" bar | Not built (high conversion win for a driving school). |
+| Social share card (`og:image`) | Still `logo.png`; want a 1200×630 branded card. |
+| Google Analytics | Old `UA-42097851-4` is **dead**. Needs a GA4 tag (owner must create it). |
+| `prefers-reduced-motion` | Not handled (no scroll animations exist yet, so low priority). |
+| Gallery section | Removed (was placeholder tiles, no real photos). |
+
+## 10. Suggested next tasks (priority order)
+
+1. **Deploy** once the owner signs off (see §5).
+2. **Real instructor photo** → replace `img/placeholder.png` on `/instructors/`
+   (single biggest trust upgrade).
+3. **Sticky mobile call bar** → fixed bottom tap-to-call on small screens,
+   `tel:0211066077`.
+4. **FAQ section** → accordion on `/services/` or home; add `FAQPage` JSON-LD.
+5. **Social share card** → 1200×630 image + update `og:image`/`twitter:image`.
+
+## 11. Rules of engagement (learned the hard way)
+
+- **Only commit when the owner is happy.** Do not commit after every micro
+  tweak — batch it. (Explicit owner preference.)
+- **Run `python3 build.py` before committing.** Otherwise partial changes don't
+  reach the pages.
+- **Preserve original copy.** The owner cares about content parity — don't
+  summarise or "streamline" text without being asked. Don't drop detail.
+- **Don't change URLs.** Directory URLs are load-bearing for SEO.
+- **No dependencies / no frameworks.** This was a deliberate choice
+  (Next.js was explicitly rejected). Keep it plain HTML/CSS.
+- **No review-solicitation/"salesy" copy.** The owner repeatedly stripped
+  phrases like "Feel free to leave a review!" — keep copy factual.
+- **Never hardcode secrets** (the old Maps API key stays gone).
+- **Testimonials use first names only** (no surnames).
+
+## 12. Quick verification before any push
+
+```bash
+cd ~/Dev/bigl-site
+python3 build.py                                   # "Rebuilt N page(s)"
+grep -c '★' index.html                             # expect 0 (SVG stars, not glyphs)
+for p in / /services/ /instructors/ /contact/; do  # all expect 200
+  curl -s -o /dev/null -w "$p %{http_code}\n" "http://localhost:8080$p"
+done
+```
+
+---
+
+*Everything in §6–§11 has already been implemented on `rebuild-2026` and pushed.
+The outstanding gap between here and "done" is: a real instructor photo, the
+optional polish in §10, and the manual deploy in §5.*
