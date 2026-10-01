@@ -9,6 +9,13 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Guard — release branch only
+        run: |
+          if [ "$GITHUB_REF_NAME" != "rebuild-2026" ]; then
+            echo "::error::Refusing to deploy from '$GITHUB_REF_NAME'. Run this workflow from the rebuild-2026 branch."
+            exit 1
+          fi
+
       - uses: actions/checkout@v4
 
       - name: Build (inline partials)
