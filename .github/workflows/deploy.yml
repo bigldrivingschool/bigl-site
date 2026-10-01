@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Guard — release branch only
+        run: |
+          if [ "$GITHUB_REF_NAME" != "rebuild-2026" ]; then
+            echo "::error::Refusing to deploy from '$GITHUB_REF_NAME'. Run this workflow from the rebuild-2026 branch."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - name: Build (inline partials)
+        run: python3 build.py
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          force_orphan: true
+          # Keep dev-only files off the public site
+          exclude_assets: 'handoff.md,build.py,_header.html,_footer.html,_pricing.html,_callbar.html,_og-card.html'
