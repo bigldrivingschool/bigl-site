@@ -53,7 +53,7 @@ instructors/index.html  ← PK's bio
 contact/index.html      ← contact methods
 404.html                ← styled 404 (noindex)
 
-css/style.css     ← the ONLY stylesheet (~423 lines, hand-written)
+css/style.css     ← the ONLY stylesheet (~480 lines, hand-written)
 js/main.js        ← mobile nav toggle + active-link highlight (~36 lines)
 img/              ← hero-banner.jpg, logo.svg, logo.png, og-cover.png,
                     favicon*, apple-touch-icon, placeholder.png
@@ -144,7 +144,10 @@ from Google Fonts in each page `<head>` (not the partial).
 testimonial cards on purpose).
 
 **Accessibility:** `:focus-visible` outlines — 3px red on light backgrounds,
-white on dark (`.top-bar`, `.hero`, `.cta`, `.site-footer`, `.page-header`).
+white on dark (`.top-bar`, `.hero`, `.cta`, `.call-bar`, `.site-footer`,
+`.page-header`). `.skip-link` in `_header.html` jumps to `<main id="main"
+tabindex="-1">` on every page. `scroll-behavior: smooth` is gated behind
+`@media (prefers-reduced-motion: no-preference)`.
 
 ## 8. SEO setup (already done — keep it intact)
 
@@ -177,7 +180,10 @@ white on dark (`.top-bar`, `.hero`, `.cta`, `.site-footer`, `.page-header`).
 | Sticky mobile "Call now" bar | **Built.** `_callbar.html` → `.call-bar`, fixed bottom bar, `tel:0211066077`, shown only ≤768px. |
 | Social share card (`og:image`) | **Built.** `img/og-cover.png` (1200×630) + `twitter:card`. Source: `_og-card.html`. |
 | Google Analytics | Old `UA-42097851-4` is **dead**. Needs a GA4 tag (owner must create it). |
-| `prefers-reduced-motion` | Not handled (no scroll animations exist yet, so low priority). |
+| `prefers-reduced-motion` | **Handled.** `scroll-behavior: smooth` only applies under `no-preference`. |
+| Skip-to-content link | **Built.** First element in `_header.html`; targets `<main id="main" tabindex="-1">`. |
+| Dead CSS | Removed `hero__badge` (held the last Unicode ★), `btn--outline`, `pricing-tag`, `mb-3`, `service-detail`. |
+| Sticky nav | ⚠ **Does not stick.** `.nav-bar` sets `position: sticky`, but its parent `.site-header` is only ~113px tall, so the nav scrolls away with the header. Fix = make `.site-header` the sticky element, or move `.nav-bar` out of it. Not actioned. |
 | Gallery section | Removed (was placeholder tiles, no real photos). |
 
 ## 10. Suggested next tasks (priority order)
