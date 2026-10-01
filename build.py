@@ -3,6 +3,7 @@
 
 Each page marks shared regions with comment markers:
   <!--@header-->  ...  <!--/@header-->
+  <!--@callbar--> ...  <!--/@callbar-->
   <!--@footer-->  ...  <!--/@footer-->
   <!--@pricing--> ...  <!--/@pricing-->
 
@@ -18,6 +19,7 @@ PAGES = ['index.html', 'services/index.html', 'instructors/index.html', 'contact
 
 PARTIALS = {
     'header': '_header.html',
+    'callbar': '_callbar.html',
     'footer': '_footer.html',
     'pricing': '_pricing.html',
 }

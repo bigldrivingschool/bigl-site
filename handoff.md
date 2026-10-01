@@ -40,7 +40,8 @@ Plain static HTML/CSS. No build step is *required* to serve it — the only
 ```
 _header.html      ← shared header (inlined into every page)  ┐
 _footer.html      ← shared footer (inlined into every page)  ├─ EDIT THESE,
-_pricing.html     ← shared pricing block (home + services)   ┘  not the pages
+_pricing.html     ← shared pricing block (home + services)   │  not the pages
+_callbar.html     ← sticky mobile "Call now" bar (every page)┘
 build.py          ← inlines the partials into the 5 pages
 
 index.html              ← home
@@ -63,6 +64,9 @@ Pages contain **marker comments** around shared regions:
    ...content here gets replaced on every build...
 <!--/@header-->
 ```
+
+The same pattern is used for `<!--@callbar-->`, `<!--@footer-->` and
+`<!--@pricing-->`.
 
 `python3 build.py` replaces everything between each marker pair with the current
 partial. **It is idempotent** — safe to run repeatedly.
@@ -159,8 +163,8 @@ white on dark (`.top-bar`, `.hero`, `.cta`, `.site-footer`, `.page-header`).
 |---|---|
 | Deploy to production | **Not run.** Live site is still old. |
 | Instructor photo | `instructors/` uses `img/placeholder.png` — needs a real photo of PK. |
-| FAQ section | Not built (good SEO + conversion win). |
-| Sticky mobile "Call now" bar | Not built (high conversion win for a driving school). |
+| FAQ section | **Built.** 8-question `<details>` accordion at `#faq` on the homepage + `FAQPage` JSON-LD in the page `<head>` (visible copy and schema text match exactly). |
+| Sticky mobile "Call now" bar | **Built.** `_callbar.html` → `.call-bar`, fixed bottom bar, `tel:0211066077`, shown only ≤768px. |
 | Social share card (`og:image`) | Still `logo.png`; want a 1200×630 branded card. |
 | Google Analytics | Old `UA-42097851-4` is **dead**. Needs a GA4 tag (owner must create it). |
 | `prefers-reduced-motion` | Not handled (no scroll animations exist yet, so low priority). |
@@ -171,10 +175,11 @@ white on dark (`.top-bar`, `.hero`, `.cta`, `.site-footer`, `.page-header`).
 1. **Deploy** once the owner signs off (see §5).
 2. **Real instructor photo** → replace `img/placeholder.png` on `/instructors/`
    (single biggest trust upgrade).
-3. **Sticky mobile call bar** → fixed bottom tap-to-call on small screens,
-   `tel:0211066077`.
-4. **FAQ section** → accordion on `/services/` or home; add `FAQPage` JSON-LD.
-5. **Social share card** → 1200×630 image + update `og:image`/`twitter:image`.
+3. **Social share card** → 1200×630 image + update `og:image`/`twitter:image`.
+4. **Google Analytics** → GA4 tag once the owner creates the property.
+
+Done (delete from this list when the next items land): sticky mobile call bar
+and the homepage FAQ + `FAQPage` JSON-LD.
 
 ## 11. Rules of engagement (learned the hard way)
 
