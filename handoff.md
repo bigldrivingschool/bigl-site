@@ -1,8 +1,9 @@
 # HANDOFF — Big L Driving School website rebuild
 
-**Last updated:** 2026-10-01 (AEST)
+**Last updated:** 2026-10-02 (AEST)
 **Branch:** `rebuild-2026` (all work lives here; pushed to `origin`)
-**Live site:** https://www.bigl.co.nz — **still serves the OLD site** (deploy not yet run)
+**Live site:** https://www.bigl.co.nz — **LIVE on the rebuild** since 2026-10-01
+(first deploy run `36936938754`; `gh-pages` = `00721a5`)
 **Repo:** `git@github.com:bigldrivingschool/bigl-site.git`
 
 This file is the single source of truth for picking this project back up. Read it
@@ -24,7 +25,8 @@ JavaScript bundler, no dependencies. The old Hugo/Bootstrap output is abandoned.
 | Branch | What it is |
 |---|---|
 | `rebuild-2026` | **Active work.** The new clean site. Everything here. |
-| `gh-pages` | **Currently live.** Old Hugo/Bootstrap output. Do not edit by hand. |
+| `gh-pages` | **Live.** Published output of the rebuild. Never edit by hand — it is wiped and rewritten on every deploy (`force_orphan`). |
+| `gh-pages-archive` | The **old Hugo/Bootstrap site** frozen at `2a7c0a8`. Rollback ref — see §5.1. |
 | `master` | 2017 Hugo **source** (`content/`, `themes/`, etc.). Reference only. |
 
 **Recovering old content:** the last good old-site commit is `2a7c0a8`
@@ -95,53 +97,64 @@ Pages: `/`, `/services/`, `/instructors/`, `/contact/` — all must return 200.
 Workflow: `.github/workflows/deploy.yml`
 
 - Trigger: **`workflow_dispatch` only** (manual). Nothing auto-deploys. This is
-  deliberate — the live site was left untouched while the rebuild was reviewed.
+  deliberate — deploying is a conscious act, never a side effect of a push.
 - Action: `peaceiris/actions-gh-pages@v4`, `publish_dir: .`,
   `publish_branch: gh-pages`, **`force_orphan: true`** (wipes old Bootstrap files
   from `gh-pages` and replaces them wholesale).
 - Runs `python3 build.py` first, then publishes.
 
-**To go live:** Actions tab → "Deploy to GitHub Pages" → Run workflow, *or*
-`gh workflow run deploy.yml`. Live in ~1–2 min.
+- **To deploy again:** Actions tab → "Deploy to GitHub Pages" → Run workflow →
+  **branch `rebuild-2026`** (the dropdown defaults to `master`, which the guard
+  rejects). Live in ~1–2 min. `gh` is not installed on the dev machine, so this
+  is done in the browser.
+- `workflow_dispatch` workflows are only exposed when the file exists on the
+  **default branch**, so `deploy.yml` is duplicated on `master` (which is why
+  the guard step exists). Keep both copies in sync if you edit it.
+- Pre-flight: `CNAME` = `www.bigl.co.nz` ✓, `.nojekyll` present ✓, Pages source
+  = `gh-pages` / (root) ✓.
 
-Before going live, verify:
-1. `CNAME` = `www.bigl.co.nz` (present ✓)
-2. `.nojekyll` exists (present ✓ — stops GitHub Pages running Jekyll)
-3. GitHub Pages is configured to serve from the `gh-pages` branch (repo Settings).
+### 5.1 First deploy — DONE (2026-10-01)
 
-### 5.1 Release plan — first deploy (`rebuild-2026` → live)
+Run `36936938754` on `rebuild-2026`, conclusion **success**, ~30 s. `gh-pages`
+went `2a7c0a8` → `00721a5` and GitHub's `pages build and deployment` rebuilt the
+site immediately.
 
-Verified state as of 2026-10-02: repo `bigldrivingschool/bigl-site` is **public**,
-**default branch is `master`**, Pages is enabled, and the live site still serves
-the old Hugo/Bootstrap build. `bigl.co.nz` 301-redirects to `www.bigl.co.nz`, so
-**no DNS work is needed**. Rollback point for the current live site: **`2a7c0a8`**
-(last commit on `origin/gh-pages`).
+Verified on the live domain afterwards: all four pages 200; call bar on every
+page; 8-question FAQ on the homepage; `og-cover.png` on all four and 1200×630;
+`robots.txt` / `sitemap.xml` / `CNAME` served; `/build.py`, `/handoff.md`,
+`/_header.html`, `/_callbar.html`, `/_og-card.html`, `/_pricing.html` all 404;
+junk URL → 404 status with the styled page; apex still 301s to `www`.
 
-**⚠ Blocker:** `.github/workflows/deploy.yml` exists only on `rebuild-2026`.
-GitHub only exposes `workflow_dispatch` workflows that exist on the *default*
-branch ("This event will only trigger a workflow run if the workflow file exists
-on the default branch"). Confirmed against the API — `actions/workflows` returns
-only `pages-build-deployment` for this repo. So there is currently **no "Run
-workflow" button**.
+**Rollback:** `git push origin gh-pages-archive:gh-pages --force` restores the old
+site in about a minute. `gh-pages-archive` holds `2a7c0a8`, the last old-site
+commit.
 
-Steps, in order:
+Two gotchas learned the hard way:
 
-1. **Push `rebuild-2026`** so origin matches what was reviewed.
-2. **Make the workflow dispatchable** — add `.github/workflows/deploy.yml` to
-   `master` (one small commit; the run itself uses the files from the branch you
-   select), *or* switch the repo default branch to `rebuild-2026` in Settings.
-   Either way add a guard step so a run from any other ref fails fast instead of
-   publishing `content/`, `themes/`, `config.toml` from `master` to the live site.
-3. **Archive the live site before it is wiped** — `force_orphan: true` replaces
-   `gh-pages` with a fresh root commit, so `2a7c0a8` becomes unreachable on
-   GitHub. Push it to a throwaway ref first:
-   `git push origin 2a7c0a8:refs/heads/gh-pages-archive`.
-4. **Confirm Settings → Pages** = "Deploy from a branch → `gh-pages` → / (root)"
-   and that "Enforce HTTPS" is on.
-5. **Run** Actions → "Deploy to GitHub Pages" → Run workflow → branch
-   `rebuild-2026`. Live in ~1–2 min.
+1. **GitHub's Pages checks can't pass behind Cloudflare.** DNS is at Cloudflare
+   with the proxy on (orange cloud), so `www` resolves to Cloudflare ranges and
+   the apex carries a `TXT` record `"ALIAS for bigldrivingschool.github.io"`.
+   Settings therefore shows "DNS Check in Progress" and **"Enforce HTTPS"
+   greyed out, permanently**. That is cosmetic: TLS is terminated by Cloudflare
+   (cert issued by Google Trust Services, `CN=bigl.co.nz`) and `http://` 301s to
+   `https://`. Do **not** "fix" it by unproxying unless you mean to move TLS back
+   to GitHub's Let's Encrypt.
+2. **Cloudflare caches by file extension.** Probing a path that does not exist
+   yet (e.g. `/css/style.css` while the old site is still live) caches the 404
+   at the edge, and `.css` entries get a 4-hour TTL from the origin headers.
+   Cost us a confusing few minutes after go-live; it expired on its own. HTML
+   itself is `cf-cache-status: DYNAMIC`, and GitHub's CDN caches HTML ~10 min
+   (`cache-control: max-age=600`), so allow ~10 min before judging a deploy.
+   Cloudflare also runs **Email Obfuscation**, which rewrites `mailto:` links to
+   `/cdn-cgi/l/email-protection#…`; harmless, but turn it off under Scrape Shield
+   if you want the markup served exactly as written.
 
-Verify after the run (GitHub Pages caches ~10 min, so hard-refresh):
+One-time setup, all done: push `rebuild-2026`, copy `deploy.yml` onto `master`
+with the guard, create `gh-pages-archive`, confirm the Pages source.
+
+**Future deploys are one step:** run the workflow from `rebuild-2026`.
+
+Checklist after any deploy (GitHub Pages caches ~10 min, so hard-refresh):
 
 - `/`, `/services/`, `/instructors/`, `/contact/` → 200
 - live HTML contains `call-bar`, `faq__item`, `og-cover.png`
@@ -150,9 +163,8 @@ Verify after the run (GitHub Pages caches ~10 min, so hard-refresh):
   `/_og-card.html`, `/handoff.md`
 - `/does-not-exist/` → 404 status and the styled 404 page
 - old Bootstrap assets gone (e.g. `/css/bootstrap.min.css` → 404)
-
-**Rollback:** `git push origin gh-pages-archive:gh-pages --force` restores the old
-site in about a minute.
+- `git ls-tree -r origin/gh-pages --name-only` lists only real site files — the
+  authoritative check that `exclude_assets` still matches what you expect
 
 Known and accepted at launch (deliberately not fixed first): `img/placeholder.png`
 on `/instructors/`, condensed home service-card copy, placement/wording of the
@@ -228,7 +240,7 @@ tabindex="-1">` on every page. `scroll-behavior: smooth` is gated behind
 
 | Item | Status |
 |---|---|
-| Deploy to production | **Not run.** Live site is still old. |
+| Deploy to production | **Done 2026-10-01** — see §5.1. Rollback ref: `gh-pages-archive`. |
 | Instructor photo | `instructors/` uses `img/placeholder.png` — needs a real photo of PK. |
 | FAQ section | **Built.** 8-question `<details>` accordion at `#faq` on the homepage + `FAQPage` JSON-LD in the page `<head>` (visible copy and schema text match exactly). |
 | Sticky mobile "Call now" bar | **Built.** `_callbar.html` → `.call-bar`, fixed bottom bar, `tel:0211066077`, shown only ≤768px. |
